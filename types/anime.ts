@@ -12,7 +12,29 @@ export interface Anime {
    synopsis: string
    year: number
    genres: { name: string }[]
+   episodes?: number
+   status?: string
+   broadcast?: {
+      day: string
+      time: string
+      timezone: string
+      string: string
+   }
 }
+
+export interface Episode {
+   mal_id: number
+   title: string
+   url: string
+   premium: boolean
+}
+
+export interface RecentEpisode {
+   entry: Anime
+   episodes: Episode[]
+   region_locked: boolean
+}
+
 export interface JikanResponse<T> {
    data: T
    pagination: {
