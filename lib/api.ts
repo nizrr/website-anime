@@ -1,4 +1,4 @@
-import { Anime, JikanResponse, RecentEpisode } from '@/types/anime'
+import { Anime, JikanResponse, NewestEpisode } from '@/types/anime'
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.jikan.moe/v4'
 
 async function fetchJikan<T>(endpoint: string): Promise<T> {
@@ -15,10 +15,10 @@ export async function getTopAnime(): Promise<JikanResponse<Anime[]>> {
    return fetchJikan<JikanResponse<Anime[]>>(`/top/anime`)
 }
 
-export async function getNewestAnime(): Promise<JikanResponse<Anime[]>> {
-   return fetchJikan<JikanResponse<Anime[]>>(`/seasons/now`)
-}
+// export async function getNewestAnime(): Promise<JikanResponse<Anime[]>> {
+//    return fetchJikan<JikanResponse<Anime[]>>(`/seasons/now`)
+// }
 
-export async function getRecentEpisodes(): Promise<JikanResponse<RecentEpisode[]>> {
-   return fetchJikan<JikanResponse<RecentEpisode[]>>(`/watch/episodes`)
+export async function getNewestEpisodes(): Promise<JikanResponse<NewestEpisode[]>> {
+   return fetchJikan<JikanResponse<NewestEpisode[]>>(`/watch/episodes`)
 }

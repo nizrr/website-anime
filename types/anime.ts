@@ -29,7 +29,7 @@ export interface Episode {
    premium: boolean
 }
 
-export interface RecentEpisode {
+export interface NewestEpisode {
    entry: Anime
    episodes: Episode[]
    region_locked: boolean
